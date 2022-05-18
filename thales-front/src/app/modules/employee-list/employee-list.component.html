@@ -1,0 +1,34 @@
+<h1>Empleados</h1>
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+  <thead>
+    <tr>
+      <th>Nombres</th>
+      <th>Numero de Documento</th>
+      <th>Celular</th>
+      <th>Correo</th>
+      <th>Salario</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let mech of employee">
+      <td>{{ mech.name }}</td>
+      <td>{{ mech.document }}</td>
+      <td>{{ mech.phone }}</td>
+      <td>{{ mech.email }}</td>
+      <td>{{ mech.salary }}</td>
+      <td>
+        <button type="button" class="btn btn-secondary" (click)="actualizarEmployee(mech)">Editar</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="eliminar(mech.idemployee)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+<div class="row justify-content-center col-10 col-md-8 mx-auto mt-5">
+    <button type="button" class="btn btn-primary" (click)="crearEmployee()">Crear</button>
+    <hr>
+</div>
